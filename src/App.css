@@ -1,0 +1,67 @@
+body {
+  justify-content: center;
+  flex-direction: column;
+  background-color: grey;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h1 {
+  color: aquamarine;
+  font-size: 3rem;
+  font-weight: 300;
+  margin: 2rem 0;
+  text-align: center;
+  display: flex;
+}
+
+#form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 1rem;
+  input {
+    border: none;
+    border-radius: 5px;
+    font-size: 1.5rem;
+    padding: 0.5rem 1rem;
+    margin-bottom: 1rem;
+  }
+}
+
+button {
+  background-color: aquamarine;
+  border: none;
+  border-radius: 5px;
+  color: black;
+  cursor: pointer;
+  font-size: 1.5rem;
+  padding: 0.5rem 1rem;
+  transition: all 0.3s ease;
+  &:hover {
+    background-color: black;
+    color: aquamarine;
+  }
+}
+
+#todo-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0px;
+}
+
+#todo-item {
+  color: aquamarine;
+  margin-top: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 1rem;
+  font-size: 2rem;
+}
