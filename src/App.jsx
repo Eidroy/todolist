@@ -15,11 +15,16 @@ export default function App() {
   const [todos, setTodos] = useState(initialTodos);
 
   const addTodo = (newTodoText) => {
-    const newTodo = {
-      id: todos.length + 1,
-      text: newTodoText,
-      completed: false,
-    };
+    let newTodo = {};
+    if (todos.length === 0) {
+      newTodo = { id: 0, text: newTodoText, completed: false };
+      setTodos([newTodo]);
+    } else
+      newTodo = {
+        id: todos[todos.length - 1].id + 1,
+        text: newTodoText,
+        completed: false,
+      };
     setTodos([...todos, newTodo]);
   };
 
