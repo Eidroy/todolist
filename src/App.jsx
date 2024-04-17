@@ -1,11 +1,12 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import TodoList from "./TodoList";
 import Form from "./Form";
+import { ThemeProvider, ThemeContext } from './Theme';
 import "./App.css";
 
 const LSKEY = "MyTodoApp";
 
-export default function App() {
+function App() {
   const initialTodos = JSON.parse(
     window.localStorage.getItem(LSKEY + ".todos")
   ) || [
@@ -13,6 +14,11 @@ export default function App() {
     { id: 2, text: "My second todo", completed: false },
   ];
   const [todos, setTodos] = useState(initialTodos);
+  const { theme, toggleTheme } = useContext(ThemeContext);
+
+  useEffect(() => {
+    document.body.className = theme;
+  }, [theme]);
 
   const addTodo = (newTodoText) => {
     let newTodo = {};
@@ -45,9 +51,18 @@ export default function App() {
   }, [todos]);
 
   return (
-    <div>
+    <div className={theme}>
+      <button onClick={toggleTheme}>Toggle theme</button>
       <Form addTodo={addTodo} />
       <TodoList todos={todos} deleteTodo={deleteTodo} toggleTodo={toggleTodo} />
     </div>
+  );
+}
+
+export default function AppWithThemeProvider() {
+  return (
+    <ThemeProvider>
+      <App />
+    </ThemeProvider>
   );
 }

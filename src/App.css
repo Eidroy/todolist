@@ -1,7 +1,7 @@
 body {
   justify-content: center;
   flex-direction: column;
-  background-color: grey;
+  background-color: rgb(41, 41, 41);
 }
 
 #root {
@@ -23,6 +23,7 @@ h1 {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-top: 1rem;
   margin-bottom: 1rem;
   input {
     border: none;
@@ -36,6 +37,7 @@ h1 {
 button {
   background-color: aquamarine;
   border: none;
+  margin: auto;
   border-radius: 5px;
   color: black;
   cursor: pointer;
@@ -53,6 +55,42 @@ button {
   flex-direction: column;
   align-items: center;
   padding: 0px;
+}
+
+.dark {
+  display: flex;
+  flex-direction: column;
+}
+
+.light {
+  background-color: white;
+  color: black;
+  display: flex;
+  flex-direction: column;
+  button{
+    background-color: black;
+    color: white;
+  }
+
+  #todo-item {
+    background-color: white;
+    color: black;
+    margin-top: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 1rem;
+    font-size: 2rem;
+  }
+
+  .delete {
+    margin-left: 5px;
+  }
+
+  h1{
+    color: black;
+  }
 }
 
 #todo-item {

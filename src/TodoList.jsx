@@ -15,7 +15,7 @@ export default function TodoList({ todos, deleteTodo, toggleTodo }) {
           >
             {todo.text}
           </span>
-          <button onClick={() => deleteTodo(todo.id)}>Delete</button>
+          <button className="delete" onClick={() => deleteTodo(todo.id)}>Delete</button>
         </li>
       ))}
     </ul>

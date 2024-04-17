@@ -23,7 +23,6 @@ export default function Form({ addTodo }) {
         value={inputValue}
         onChange={handleChange}
       />
-      <br />
       <button onClick={handleClick}>Add todo</button>
     </div>
   );
